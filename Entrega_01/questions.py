@@ -1,23 +1,23 @@
 import random
 
-words = [
-    "python",
-    "programa",
-    "variable",
-    "funcion",
-    "bucle",
-    "cadena",
-    "entero",
-    "lista",
-]
-
-word = random.choice(words)
-guessed = []
-attemps = 6
+categorias = {
+    "general": ["python","programa",],
+    "definible": ["variable","funcion"],
+    "primitivas":["cadena","entero",],
+    "iterables":["bucle","lista",]
+}
 
 print("¡Bienvenido al Ahorcado")
 print()
+print("Ingrese una categoria de palabras:")
+print()
+print("general, definible, primitivas o iterables.")
+print()
 
+categoria = input()
+word = random.choice(categorias[categoria])
+guessed = []
+attemps = 6
 while attemps > 0:
     # Mostrar progreso: letras adivinadas y guiones para las que faltan
     progress = ""
